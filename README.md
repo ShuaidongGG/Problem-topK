@@ -16,13 +16,12 @@ My solution for Big size numbers with Small memory to select top K numbers.
 
 ### heap usage
 
-![cpu.svg](/heap/heap-cpu.svg)
+<img src="heap/heap-cpu.svg">
+<img src="heap/heap-mem.svg">
 
-![mem.svg](heap/heap-mem.svg)
 
 ### quick usage
 
-![cpu.svg](quick/quick-cpu.svg)
-
-![mem.svg](quick/quick-mem.svg)
+<img src="quick/quick-cpu.svg">
+<img src="quick/quick-mem.svg">
 
