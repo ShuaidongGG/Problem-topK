@@ -21,7 +21,8 @@ const (
 func main() {
 	var cpuProfile = flag.String("cpuprofile", "", "write cpu profile to file")
 	var memProfile = flag.String("memprofile", "", "write mem profile to file")
-	file, err := os.Open("/home/gsd/GitSomething/Problem-topK/src/generate/random_numbers.bin")
+	// 替换为你生成的文件路径
+	file, err := os.Open("/path/to/your/random_numbers.bin")
 	flag.Parse()
 	//采样cpu运行状态
 	if *cpuProfile != "" {
