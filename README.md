@@ -16,12 +16,34 @@ My solution for Big size numbers with Small memory to select top K numbers.
 
 ### heap usage
 
-<img src="heap/heap-cpu.svg">
-<img src="heap/heap-mem.svg">
+- cpu-usage [cpu](/heap/heap-cpu.svg)
+  - all cost: 16.26s
+  - heap Push func: 2.90s
+  - heap Pop func: 5.19s
+  - read from disk: 0.27s
+  - read from memory: 2.80s
+  - read int64 one by one: 3.46s
 
+- mem-usage [mem](/heap/heap-mem.svg)
+  -  all cost: 20MB
 
 ### quick usage
 
-<img src="quick/quick-cpu.svg">
-<img src="quick/quick-mem.svg">
+- cpu-usage [cpu](/quick/quick-cpu.svg)
+  - all cost: 15.02s
+  - sort func: 13.61s
+  - read from disk: 0.11s
+  - read from memory: 1.23s
 
+- mem-usage [mem](/quick/quick-mem.svg)
+  -  all cost: 40MB
+  -  main cost: 20MB
+
+### Discussions
+
+In the case of selecting the top K data scenarios from a huge amount of data, Heap sort does show better performance on my machine compared to quick sort. 
+
+The possible reasons for this are as follows:
+
+1. Adjust small size heap is `O(logK)`. heap sort is `O(NlogK)`, N is counts of numbers. quick sort is `O(N/n*nlogn) == O(Nlogn)`, N is counts of numbers, n is counts of every chunk(20MB) numbers.
+2. Quick sort is implemented recursively and requires additional memory.
